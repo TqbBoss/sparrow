@@ -1,0 +1,33 @@
+{
+  "properties": [
+    {
+      "name": "sparrow.datasource.master.url",
+      "type": "java.lang.String",
+      "description": "Description for sparrow.datasource.master.url."
+    },
+    {
+      "name": "sparrow.datasource.master.username",
+      "type": "java.lang.String",
+      "description": "Description for sparrow.datasource.master.username."
+    },
+    {
+      "name": "sparrow.datasource.master.password",
+      "type": "java.lang.String",
+      "description": "Description for sparrow.datasource.master.password."
+    },
+    {
+      "name": "sparrow.datasource.slave.url",
+      "type": "java.lang.String",
+      "description": "Description for sparrow.datasource.url."
+    },
+    {
+      "name": "sparrow.datasource.slave.username",
+      "type": "java.lang.String",
+      "description": "Description for sparrow.datasource.username."
+    },
+    {
+      "name": "sparrow.datasource.slave.password",
+      "type": "java.lang.String",
+      "description": "Description for sparrow.datasource.slave.password."
+    }
+  ] }
