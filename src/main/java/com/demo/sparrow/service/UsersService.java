@@ -24,6 +24,6 @@ public class UsersService {
 
     @DynamicDataSource(DynamicDataSourceType.slave)
     public Users getUserById(Long id){
-        return this.usersRepository.selectByPrimaryKey(id);
+        return this.usersRepository.getUserDetailById(id);
     }
 }
