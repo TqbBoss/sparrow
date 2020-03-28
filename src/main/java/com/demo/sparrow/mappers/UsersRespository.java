@@ -1,8 +1,7 @@
 package com.demo.sparrow.mappers;
 
+import com.demo.sparrow.domains.UserDetail;
 import com.demo.sparrow.domains.Users;
-
-import java.util.List;
 
 public interface UsersRespository {
     int deleteByPrimaryKey(Long id);
@@ -16,4 +15,6 @@ public interface UsersRespository {
     int updateByPrimaryKeySelective(Users record);
 
     int updateByPrimaryKey(Users record);
+
+    UserDetail getUserDetailById(Long id);
 }

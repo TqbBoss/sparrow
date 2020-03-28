@@ -2,6 +2,7 @@ package com.demo.sparrow.service;
 
 import com.demo.sparrow.datasource.DynamicDataSource;
 import com.demo.sparrow.datasource.DynamicDataSourceType;
+import com.demo.sparrow.domains.UserDetail;
 import com.demo.sparrow.domains.Users;
 import com.demo.sparrow.mappers.UsersRespository;
 import org.springframework.stereotype.Service;
@@ -23,7 +24,7 @@ public class UsersService {
     }
 
     @DynamicDataSource(DynamicDataSourceType.slave)
-    public Users getUserById(Long id){
-        return this.usersRepository.selectByPrimaryKey(id);
+    public UserDetail getUserById(Long id){
+        return this.usersRepository.getUserDetailById(id);
     }
 }

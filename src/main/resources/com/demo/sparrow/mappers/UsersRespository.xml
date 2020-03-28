@@ -10,6 +10,27 @@
   <sql id="Base_Column_List">
     id, `name`, email, telephone
   </sql>
+  <resultMap id="detailResultMap" type="com.demo.sparrow.domains.UserDetail">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+    <collection property="cards" ofType="com.demo.sparrow.domains.Cards">
+      <id column="card_id" jdbcType="BIGINT" property="id" />
+      <result column="account" jdbcType="VARCHAR" property="account" />
+      <result column="bank" jdbcType="VARCHAR" property="bank" />
+      <result column="user_id" jdbcType="BIGINT" property="userId" />
+    </collection>
+  </resultMap>
+  <sql id="join_Column_List">
+    u.*,c.id AS card_id,c.account,c.bank,c.user_id
+   </sql>
+  <select id="getUserDetailById" parameterType="java.lang.Long" resultMap="detailResultMap">
+    select
+    <include refid="join_Column_List" />
+    from users u LEFT JOIN cards c ON u.id=c.user_id
+    where u.id = #{id,jdbcType=BIGINT}
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
