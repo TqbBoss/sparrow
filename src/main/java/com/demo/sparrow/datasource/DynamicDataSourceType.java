@@ -1,8 +1,8 @@
 package com.demo.sparrow.datasource;
 
 public enum DynamicDataSourceType {
-    master("master"),
-    slave("slave");
+    master(DynamicDataSourceConfiguration.MASTER_DATASOURCE),
+    slave(DynamicDataSourceConfiguration.SLAVE_DATASOURCE);
 
     private String value;
 
